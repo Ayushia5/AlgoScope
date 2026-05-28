@@ -158,6 +158,7 @@
   }
 
   .theme-navbar {
+    background: transparent !important;
     background: var(--theme-bg-soft);
     border-color: var(--theme-border);
     color: var(--theme-text);

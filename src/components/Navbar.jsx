@@ -234,7 +234,7 @@ export const Navbar = () => {
               <img
                 src={githubIcon}
                 alt="Github Repository Link"
-                className="w-7 h-5 pr-2 invert"
+                className="w-7 h-5 pr-2"
               />
 
               <span>Github</span>
