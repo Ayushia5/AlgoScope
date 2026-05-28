@@ -36,26 +36,6 @@ const bottomVariants = {
   open: { rotate: -45, y: -6 },
 }
 
-const menuVariants = {
-  closed: {
-    opacity: 0,
-    y: -10,
-    transition: {
-      duration: 0.2,
-    },
-  },
-  open: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: 'spring',
-      stiffness: 260,
-      damping: 20,
-      staggerChildren: 0.05,
-    },
-  },
-}
-
 const menuItemVariants = {
   closed: { opacity: 0, y: -10 },
   open: { opacity: 1, y: 0 },
