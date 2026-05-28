@@ -149,8 +149,8 @@ export const Navbar = () => {
   }, [history])
 
   return (
-    <header className="theme-navbar sticky top-4 z-50 w-full px-4">
-      <div className="mx-auto max-w-7xl backdrop-blur-xl bg-neutral-950/70 border border-neutral-800/60 rounded-2xl shadow-xl px-6 py-3">
+    <header className="theme-navbar sticky top-4 z-50 mx-4 rounded-2xl backdrop-blur-xl bg-neutral-950/70 border border-neutral-800/60 shadow-xl">
+      <div className="mx-auto max-w-7xl px-6 py-3">
         <div className="flex h-16 items-center justify-between relative">
           <Link
             to="/"
