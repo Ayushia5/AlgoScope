@@ -169,8 +169,8 @@ export const Navbar = () => {
   }, [history])
 
   return (
-    <header className="theme-navbar sticky top-0 z-50 w-full border-b backdrop-blur rounded-xl shadow-2xl">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header className="theme-navbar sticky top-4 z-50 w-full px-4">
+      <div className="mx-auto max-w-7xl backdrop-blur-xl bg-neutral-950/70 border border-neutral-800/60 rounded-2xl shadow-xl px-6 py-3">
         <div className="flex h-16 items-center justify-between relative">
           <Link
             to="/"
@@ -193,11 +193,11 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center gap-6">
             <ul className="flex items-center gap-1">
               <li className="relative group">
-                <button className="rounded-lg px-4 py-2 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-200">
+                <button className="relative text-sm font-medium text-neutral-400 hover:text-neutral-100 px-3 py-1.5 rounded-lg hover:bg-neutral-900/50 transition-all duration-300">
                   Explore
                 </button>
 
-                <div className="absolute left-0 top-12 py-2 invisible opacity-0 translate-y-2 min-w-[240px] rounded-xl border border-white/10 bg-slate-900/95 p-2 shadow-2xl backdrop-blur-xl transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 z-50">
+                <div className="absolute top-full mt-2 right-0 w-56 bg-neutral-950 border border-neutral-800/80 rounded-xl shadow-2xl p-1.5 backdrop-blur-2xl invisible opacity-0 translate-y-2 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 z-50">
                   {algorithmLinks.map((link) => (
                     <Link
                       key={link.name}
@@ -205,7 +205,7 @@ export const Navbar = () => {
                       className={`block rounded-lg px-4 py-2 text-sm transition-all ${
                         pathname === link.href
                           ? 'bg-indigo-500/20 text-indigo-300'
-                          : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                          : 'text-neutral-400 hover:bg-neutral-900 hover:text-neutral-200 transition-colors'
                       }`}
                     >
                       {link.name}
@@ -232,7 +232,7 @@ export const Navbar = () => {
                         <Link
                           key={item}
                           to={matched?.href || '/'}
-                          className="block rounded-lg px-4 py-2 text-sm text-slate-300 hover:bg-white/5 hover:text-white transition-all"
+                          className="block rounded-lg px-4 py-2 text-sm text-neutral-400 hover:bg-neutral-900 hover:text-neutral-200 transition-colors"
                         >
                           {item}
                         </Link>
@@ -249,7 +249,7 @@ export const Navbar = () => {
               href="https://github.com/algoscope-hq/AlgoScope"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center rounded-xl bg-white px-5 py-2 text-sm font-bold text-black shadow-lg hover:bg-slate-200 transition-all duration-200 active:scale-95"
+              className="flex items-center gap-2 border border-neutral-700 bg-neutral-900/40 hover:bg-neutral-800/80 text-neutral-200 rounded-xl px-4 py-1.5 text-sm font-medium transition-all duration-300"
             >
               <img
                 src={githubIcon}
@@ -336,10 +336,10 @@ export const Navbar = () => {
           <motion.div
             key="mobile-menu"
             className="theme-mobile-menu md:hidden border-t backdrop-blur-xl shadow-2xl rounded-b-2xl overflow-hidden"
-            variants={menuVariants}
-            initial="closed"
-            animate="open"
-            exit="closed"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
               <div className="mb-6 lg:hidden">
